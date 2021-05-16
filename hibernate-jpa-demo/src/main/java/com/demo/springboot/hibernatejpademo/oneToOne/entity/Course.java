@@ -1,6 +1,7 @@
 package com.demo.springboot.hibernatejpademo.oneToOne.entity;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +22,7 @@ public class Course {
     @CreationTimestamp
     private Timestamp created_date;
 
-    @CreationTimestamp
+    @UpdateTimestamp
     private Timestamp last_updated_date;
 
     public Course() {

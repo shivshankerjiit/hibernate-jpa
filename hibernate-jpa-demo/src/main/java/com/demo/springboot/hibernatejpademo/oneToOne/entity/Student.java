@@ -1,19 +1,19 @@
 package com.demo.springboot.hibernatejpademo.oneToOne.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Student {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
+
+    @OneToOne
+    private Passport passport;
 
     public Student() {
     }
@@ -22,11 +22,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -36,6 +36,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
     }
 
     @Override
